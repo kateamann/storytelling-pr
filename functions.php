@@ -88,11 +88,6 @@ function storytelling_pr_child_theme_setup() {
 	// -- Editor Color Palette
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Lightest gray', CHILD_TEXT_DOMAIN ),
-			'slug'  => 'light-gray',
-			'color' => '#f5f5f5',
-		),
-		array(
 			'name'  => __( 'Light gray', CHILD_TEXT_DOMAIN ),
 			'slug'  => 'light-gray',
 			'color' => '#eeeeee',
@@ -106,6 +101,11 @@ function storytelling_pr_child_theme_setup() {
 			'name'  => __( 'Dark gray', CHILD_TEXT_DOMAIN ),
 			'slug'  => 'dark-gray',
 			'color' => '#333333',
+		),
+		array(
+			'name'  => __( 'Purple', CHILD_TEXT_DOMAIN ),
+			'slug'  => 'purple',
+			'color' => '#610089',
 		),
 	) );
 
@@ -141,24 +141,28 @@ function storytelling_pr_global_enqueues() {
 	// }
 	
 	// javascript
-	// $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	// wp_enqueue_script(
-	// 	CHILD_TEXT_DOMAIN . '-responsive-menu',
-	// 	get_stylesheet_directory_uri() . "/js/responsive-menus{$suffix}.js",
-	// 	array( 'jquery' ),
-	// 	CHILD_THEME_VERSION,
-	// 	true
-	// );
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	wp_enqueue_script(
+		CHILD_TEXT_DOMAIN . '-responsive-menu',
+		get_stylesheet_directory_uri() . "/js/responsive-menus{$suffix}.js",
+		array( 'jquery' ),
+		CHILD_THEME_VERSION,
+		true
+	);
 
-	// wp_localize_script(
-	// 	CHILD_TEXT_DOMAIN . '-responsive-menu',
-	// 	'genesis_responsive_menu',
-	// 	responsive_menu_settings()
-	// );
+	wp_localize_script(
+		CHILD_TEXT_DOMAIN . '-responsive-menu',
+		'genesis_responsive_menu',
+		responsive_menu_settings()
+	);
 
 }
 add_action( 'wp_enqueue_scripts', 'storytelling_pr_global_enqueues' );
 
+function spr_enqueue_slick() {
+	wp_enqueue_style( 'slider-styles', get_stylesheet_directory_uri() . "/assets/slick/slick.css", array(), CHILD_THEME_VERSION );
+	wp_enqueue_script( 'slider', get_stylesheet_directory_uri() . "/assets/slick/slick.min.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
+}
 
 
 /**
@@ -176,7 +180,7 @@ add_action( 'enqueue_block_editor_assets', 'storytelling_pr_gutenberg_scripts' )
  *
  */
 function storytelling_pr_theme_fonts_url() {
-	$font_families = apply_filters( 'storytelling_pr_theme_fonts', array( 'Libre+Franklin:400,400i,700,700i' ) );
+	$font_families = apply_filters( 'storytelling_pr_theme_fonts', array( 'Lato:400,400i,700,700i' ) );
 	$query_args = array(
 		'family' => implode( '|', $font_families ),
 		'subset' => 'latin,latin-ext',

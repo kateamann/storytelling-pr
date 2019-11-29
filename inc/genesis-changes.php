@@ -89,8 +89,7 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 // Remove sidebar layouts
 unregister_sidebar( 'header-right' );
-unregister_sidebar( 'sidebar' );
-unregister_sidebar( 'sidebar-alt' );
+
 
 // Adds support for after entry widget.
 // add_theme_support( 'genesis-after-entry-widget-area' );

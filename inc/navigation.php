@@ -36,43 +36,6 @@ function storytelling_pr_secondary_menu_args( $args ) {
 
 }
 
-// Removes output of primary navigation right extras.
-// remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
-// remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
-
-
-/**
- * Mobile Menu Toggle
- *
- */
-function storytelling_pr_mobile_menu_toggle() {
-
-	if( ! has_nav_menu( 'mobile' ) )
-		return;
-
-    echo '<div class="nav-mobile">';
-	echo '<a class="mobile-menu-toggle" href="#">' . ea_icon( 'menu' ) . '</a>';
-	echo '</div>';
-}
-// add_action( 'genesis_header', 'storytelling_pr_mobile_menu_toggle', 12 );
-
-/**
- * Mobile Menu
- *
- */
-function storytelling_pr_mobile_menu() {
-  if( has_nav_menu( 'mobile' ) ) {
-    echo '<div id="sidr-mobile-menu" class="sidr right">';
-      echo '<a class="sidr-menu-close" href="#">' . ea_icon( 'close' ) . '</a>';
-      wp_nav_menu( array( 'theme_location' => 'mobile' ) );
-    echo '</div>';
-  }
-}
-// add_action( 'wp_footer', 'storytelling_pr_mobile_menu' );
-
-
-
-// Responsive menu
 
 /**
  * Defines responsive menu settings.
@@ -83,7 +46,7 @@ function responsive_menu_settings() {
 
 	$settings = array(
 		'mainMenu'         => __( '<span class="hamburger-box"><span class="hamburger-inner"></span></span>' ),
-		'menuIconClass'    => 'hamburger hamburger--elastic',
+		'menuIconClass'    => 'hamburger hamburger--collapse',
 		'subMenu'          => __( 'Submenu', CHILD_TEXT_DOMAIN ),
 		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
 		'menuClasses'      => array(
