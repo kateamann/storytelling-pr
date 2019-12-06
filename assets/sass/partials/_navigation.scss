@@ -128,12 +128,13 @@
 		}
 
 		a {
-			background-color: rgba(255,255, 255, 0.70);
+			background-color: initial;
 			font-size: 14px;
 			position: relative;
 			word-wrap: break-word;
 
 			@media only screen and (min-width: $small-screen) {
+				background-color: rgba(255,255, 255, 0.70);
 				border-top: 0;
 				padding-bottom: 15px;
 				padding-top: 15px;
@@ -289,14 +290,29 @@
 	width: 100%;
 	text-transform: uppercase;
 
+	.genesis-nav-menu {
+		margin-bottom: 20px;
+	}
+
+	.genesis-nav-menu .menu-item.social {
+		display: inline-block;
+		margin-right: 40px;
+	}
+
 	@media only screen and (min-width: $small-screen) {
 		clear: none;
 		float: right;
 		width: auto;
 
+		.genesis-nav-menu {
+			margin-bottom: 0;
+		}
+
+		.genesis-nav-menu .menu-item.social {
+			margin-right: 0;
+		}
+
 		.genesis-nav-menu a {
-			// padding-left: 15px;
-			// padding-right: 15px;
 			padding: 40px 15px;
 		}
 
@@ -325,6 +341,18 @@
 	margin-left: 10px;
 	margin-right: 10px;
 	padding: 0;
+}
+
+
+/* Child pages menu
+--------------------------------------------- */
+
+.child-pages-menu {
+	text-transform: uppercase;
+
+	ul.children {
+		padding-top: 10px;
+	}
 }
 
 
@@ -372,7 +400,7 @@
 .hamburger-inner::after {
     width: 40px;
     height: 4px;
-    background-color: #000;
+    background-color: $black;
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
@@ -421,12 +449,15 @@
 			transform: translate3d(0, (6px + 4px) * -1, 0) rotate(-45deg);
 			transition-delay: 0.22s;
 			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+			background-color: $purple;
 
 			&::after {
 				top: 0;
 				opacity: 0;
 				transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
 				opacity 0.1s 0.22s linear;
+				background-color: $purple;
+
 			}
 
 			&::before {
@@ -434,6 +465,8 @@
 				transform: rotate(-90deg);
 				transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
 				transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+				background-color: $purple;
+
 			}
 		}
 	}

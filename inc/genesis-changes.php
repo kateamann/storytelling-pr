@@ -62,17 +62,6 @@ function remove_genesis_page_post_scripts_box() {
 remove_action( 'admin_menu', 'genesis_add_inpost_seo_box' );
 
 
-// add_action( 'init', 'custom_post_type_support', 11 );
-// function custom_post_type_support() {
-// 	remove_post_type_support( 'page', array( 'genesis-seo', 'genesis-scripts', 'genesis-layouts' ) );
-// 	// remove_post_type_support( 'post-type', 'genesis-seo' );
-// 	// remove_post_type_support( 'post-type', 'genesis-scripts' );
-// 	// remove_post_type_support( 'post-type', 'genesis-layouts' );
-// }
-
-// Remove admin bar styling
-// add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
-
 // Remove Edit link
 add_filter( 'genesis_edit_post_link', '__return_false' );
 
@@ -91,15 +80,8 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 unregister_sidebar( 'header-right' );
 
 
-// Adds support for after entry widget.
-// add_theme_support( 'genesis-after-entry-widget-area' );
-
 // add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
-
-
-// Add New Sidebars
-// genesis_register_widget_area( array( 'id' => 'blog-sidebar', 'name' => 'Blog Sidebar' ) );
 
 /**
  * Remove Genesis Templates

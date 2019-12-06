@@ -58,33 +58,33 @@ html {
 /* Site Container
 --------------------------------------------- */
 
-// .site-container {
-// 	animation: fadein 1s;
-// 	word-wrap: break-word;
-// }
+.site-container {
+	animation: fadein 1s;
+	word-wrap: break-word;
+}
 
-// @keyframes fadein {
+@keyframes fadein {
 
-// 	from {
-// 		opacity: 0;
-// 	}
+	from {
+		opacity: 0;
+	}
 
-// 	to {
-// 		opacity: 1;
-// 	}
+	to {
+		opacity: 1;
+	}
 
-// }
+}
 
 /* Site Inner
 --------------------------------------------- */
 
 .site-inner {
 	clear: both;
-	margin: 0 auto;
+	margin: 90px auto 0;
 	padding: 30px 30px 0;
 
 	@media only screen and (min-width: $small-screen) {
-		margin-top: 70px;
+		margin-top: 160px;
 		max-width: 1200px;
 	}
 }
@@ -166,17 +166,33 @@ html {
 	}
 
 	.cta .button {
-		font-size: 20px;
+		font-size: 14px;
 		text-transform: uppercase;
 		background-color: rgba(97,0,137,0.7);
 
 		&:hover {
 			background-color: $purple;
 		}
+
+		@media only screen and (min-width: $small-screen) {
+			font-size: 20px;
+		}
 	}
 
 	.scroller {
+		font-size: 40px;
+		text-shadow: 0 0 15px $black;
+		width: 100%;
+		padding: 0 10px; 
 
+		a {
+			display: block;
+			color: $white;
+		}
+
+		a:hover {
+			color: rgba(255,255, 255, 0.70);
+		}
 	}
 }
 
@@ -217,7 +233,7 @@ html {
 	}
 
 	.widget {
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 	}
 
 	p {

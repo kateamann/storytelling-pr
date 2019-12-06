@@ -60,3 +60,41 @@ function responsive_menu_settings() {
 	return $settings;
 
 }
+
+
+
+/**
+ * Adds sidebar submenu when subpages exist
+ *
+ * @since 1.0.0
+ */
+add_action( 'genesis_sidebar', 'spr_display_child_menu', 5 );
+function spr_display_child_menu() { 
+
+	if ( is_page() ) {
+		global $post;
+
+		if ( $post->post_parent ) {
+		    $children = wp_list_pages( array(
+		        'title_li' => '',
+		        'child_of' => $post->post_parent,
+		        'echo'     => 0
+		    ) );
+		    $title = get_the_title( $post->post_parent );
+		    $parent_link = get_permalink( $post->post_parent );
+		} else {
+		    $children = wp_list_pages( array(
+		        'title_li' => '',
+		        'child_of' => $post->ID,
+		        'echo'     => 0
+		    ) );
+		    $title = get_the_title( $post->ID );
+		    $parent_link = get_permalink( $post->ID );
+		}
+		 
+		if ( $children ) { 
+			echo '<section class="child-pages-menu widget"><h3 class="widgettitle widget-title"><a href="' . $parent_link . '">' . $title . '</a></h3>';
+		    echo '<ul>' . $children . '</ul></section>';
+		} 
+	}
+}

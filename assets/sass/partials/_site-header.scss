@@ -2,11 +2,16 @@
 ---------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: rgba(255,255, 255, 0.70);
+	background-color: rgba(255,255, 255, 0.90);
 	padding: 0 30px;
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	z-index: 9999;
+
+	@media only screen and (min-width: $small-screen) {
+		background-color: rgba(255,255, 255, 0.70);
+		position: fixed;
+	}
 }
 
 /* Title Area

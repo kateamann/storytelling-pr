@@ -10,6 +10,7 @@
 
 add_action( 'wp_enqueue_scripts', 'spr_enqueue_slick' );
 wp_enqueue_script( 'home-slider-init', get_stylesheet_directory_uri() . "/js/slick-home.js", array( 'slider' ), CHILD_THEME_VERSION, true );
+wp_enqueue_script( 'smooth-scroll', get_stylesheet_directory_uri() . "/js/smooth-scroll.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
@@ -53,7 +54,7 @@ function is_home_hero() {
 					<a class="button" href="<?php echo esc_url( $link ); ?>"><?php echo $link_text; ?></a>
 				</div>
 				<div class="scroller">
-					SCROLL <i class="fas fa-arrow-down"></i> DOWN
+					<a href="#genesis-content"><i class="fas fa-arrow-down"></i></a>
 				</div>
 			</div>
 		</div>

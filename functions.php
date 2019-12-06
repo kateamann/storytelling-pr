@@ -129,16 +129,8 @@ function storytelling_pr_global_enqueues() {
 
 	// css
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', storytelling_pr_theme_fonts_url() );
-    //wp_enqueue_style( CHILD_TEXT_DOMAIN . '-style', get_stylesheet_directory_uri() . '/style.css', array(), CHILD_THEME_VERSION );
     wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fontawesome', '//use.fontawesome.com/releases/v5.7.2/css/all.css', array(), CHILD_THEME_VERSION );
     wp_enqueue_style( 'dashicons' );
-
-	// Move jQuery to footer
-	// if( ! is_admin() ) {
-	// 	wp_deregister_script( 'jquery' );
-	// 	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-	// 	wp_enqueue_script( 'jquery' );
-	// }
 	
 	// javascript
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
