@@ -80,7 +80,7 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 unregister_sidebar( 'header-right' );
 
 
-// add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
 
 /**
