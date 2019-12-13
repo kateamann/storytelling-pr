@@ -80,7 +80,17 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 unregister_sidebar( 'header-right' );
 
 
-add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
+add_filter( 'genesis_pre_get_option_site_layout', 'spr_set_blog_layout' );
+/**
+ * Apply Content Sidebar content layout to blog.
+ * 
+ * @return string layout ID.
+ */
+function spr_set_blog_layout() {
+    if ( is_single() || is_archive() || is_home() ) {
+        return 'content-sidebar';
+    }
+}
 
 
 /**
