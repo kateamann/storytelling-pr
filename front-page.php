@@ -28,10 +28,12 @@ function is_home_hero() {
 		<?php while( have_rows('home_slides') ): the_row(); 
 			$image = get_sub_field('image');
 			$size = 'full';
+			$credit = get_sub_field('credit_line');
 			?>
 
 			<div class="home-slide">
 				<?php echo wp_get_attachment_image( $image, $size ); ?>
+				<?php if ($credit) { echo '<div class="credit">' . $credit . '</div>'; }?>
 			</div><?php 
 
 			endwhile; ?>
