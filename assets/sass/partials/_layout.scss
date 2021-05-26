@@ -95,10 +95,14 @@ html {
 
 .home {
 
+	.site-inner {
+		display: none;
+	}
+
 	.home-hero {
 		position: relative;
 		height: calc(100vh - 96px);
-		margin-top: 96px;
+		margin-top: 109px;
 		overflow: hidden;
 	}
 

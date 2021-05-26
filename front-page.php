@@ -52,12 +52,12 @@ function is_home_hero() {
 				<div class="logo">
 					<?php echo wp_get_attachment_image( $logo, $logo_size ); ?>
 				</div>
-				<div class="cta">
+				<!-- <div class="cta">
 					<a class="button" href="<?php echo esc_url( $link ); ?>"><?php echo $link_text; ?></a>
 				</div>
 				<div class="scroller">
 					<a href="#genesis-content"><i class="fas fa-arrow-down"></i></a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 </div>
